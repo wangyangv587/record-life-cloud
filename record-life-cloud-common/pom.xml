@@ -10,12 +10,20 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>record-life-cloud-common</artifactId>
+    <description>通用包，包含工具类、实体类、dto类、aop</description>
 
     <dependencies>
+        <!--hutool工具类依赖-->
         <dependency>
             <groupId>cn.hutool</groupId>
             <artifactId>hutool-all</artifactId>
             <version>${hutool.version}</version>
+        </dependency>
+        <!--使用springboot+aspect，此以来里面包含了aspectjweaver依赖-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-aop</artifactId>
+            <version>2.1.15.RELEASE</version>
         </dependency>
     </dependencies>
 

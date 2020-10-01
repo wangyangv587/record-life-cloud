@@ -17,13 +17,13 @@
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
         <!--mybatis-plus start-->
-        <dependency>
+       <!-- <dependency>
             <groupId>com.baomidou</groupId>
             <artifactId>mybatis-plus-boot-starter</artifactId>
             <version>${mybatis.plus.version}</version>
         </dependency>
-        <!--mybatis-plus end-->
-        <!--mysql配置 start-->
+        &lt;!&ndash;mybatis-plus end&ndash;&gt;
+        &lt;!&ndash;mysql配置 start&ndash;&gt;
         <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
@@ -33,7 +33,7 @@
             <groupId>com.alibaba</groupId>
             <artifactId>druid-spring-boot-starter</artifactId>
             <version>${alibaba.druid.version}</version>
-        </dependency>
+        </dependency>-->
         <!--mysql配置 start-->
     </dependencies>
 
