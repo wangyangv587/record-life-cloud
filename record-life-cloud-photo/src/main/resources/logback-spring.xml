@@ -79,11 +79,17 @@
 		</filter>
 	</appender>
 
-	<logger name="com.shadow.photo.controller" level="debug" additivity="true">
+	<logger name="com.shadow.photo.dao" level="debug" additivity="true">
 		<appender-ref ref="debugAppender" />
 	</logger>
-	<logger name="com.shadow.common" level="debug" additivity="true">
-		<appender-ref ref="debugAppender" />
+	<logger name="com.shadow.photo.service" level="info" additivity="true">
+		<appender-ref ref="infoAppender" />
+	</logger>
+	<logger name="com.shadow.photo.controller" level="info" additivity="true">
+		<appender-ref ref="infoAppender" />
+	</logger>
+	<logger name="com.shadow.common" level="info" additivity="true">
+		<appender-ref ref="infoAppender" />
 	</logger>
 
 	<logger name="com.shadow" level="error" additivity="true">

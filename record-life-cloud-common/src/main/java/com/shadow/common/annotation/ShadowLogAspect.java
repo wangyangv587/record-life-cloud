@@ -52,7 +52,7 @@ public class ShadowLogAspect {
 
         //记录返回值
         try {
-            log.debug("{} | {}ms，return:{}", methodName, (end - start), JSONUtil.toJsonStr(result));
+            log.info("{} | {}ms，return:{}", methodName, (end - start), JSONUtil.toJsonStr(result));
         } catch (Exception e) {
             log.error("注解打印返回值日志错误：{}.{}，e：{}", className, methodName, e);
         }

@@ -29,14 +29,14 @@ public class R extends HashMap<String,Object> {
         return r;
     }
 
-    public static R error(){
+    public R error(){
         R r = new R();
         r.put("code",500);
         r.put("msg","error");
         return r;
     }
 
-    public static R data(Object data){
+    public R data(Object data){
         R r = new R();
         r.put("data",data);
         return r;
