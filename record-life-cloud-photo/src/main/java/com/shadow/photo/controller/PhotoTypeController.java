@@ -1,6 +1,7 @@
 package com.shadow.photo.controller;
 
 import cn.hutool.json.JSONObject;
+import com.shadow.common.annotation.DS;
 import com.shadow.common.annotation.ShadowLog;
 import com.shadow.common.entity.photo.PhotoTypeEntity;
 import com.shadow.common.util.R;
@@ -40,6 +41,7 @@ public class PhotoTypeController {
      * @param jsonObject
      * @return
      */
+    @DS
     @ShadowLog
     @PostMapping("list")
     public R listPage(@RequestBody JSONObject jsonObject){
