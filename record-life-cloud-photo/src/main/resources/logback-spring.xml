@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration scan="true">
+
+	<!-- 通过property标签,来存放key-value数据,便于后面的动态获取,提高程序的灵活性 -->
+	<property name="log-dir" value="./logs" />
+	<property name="log-name" value="photo" />
+
+	<appender name="consoleAppender" class="ch.qos.logback.core.ConsoleAppender">
+		<encoder>
+			<pattern>%d{HH:mm:ss.SSS} %-5level %logger{16} : %line | %msg%n</pattern>
+			<charset class="java.nio.charset.Charset">UTF-8</charset>
+		</encoder>
+	</appender>
+
+	<appender name="infoAppender" class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<Prudent>true</Prudent>
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<!--配置生成日志的文件路径 -->
+			<FileNamePattern>${log-dir}/%d{yyyy-MM-dd}/${log-name}-info.log</FileNamePattern>
+			<maxHistory>60</maxHistory>
+		</rollingPolicy>
+		<layout class="ch.qos.logback.classic.PatternLayout">
+			<Pattern>%d{HH:mm:ss} -%msg%n</Pattern>
+		</layout>
+		<encoder>
+			<pattern>%d{HH:mm:ss.SSS} %-5level %logger{16} : %line | %msg%n</pattern>
+			<charset class="java.nio.charset.Charset">UTF-8</charset>
+		</encoder>
+		<append>true</append>
+		<filter class="ch.qos.logback.classic.filter.LevelFilter">
+			<level>INFO</level>
+			<onMatch>ACCEPT</onMatch>
+			<onMismatch>DENY</onMismatch>
+		</filter>
+	</appender>
+
+	<appender name="debugAppender" class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<Prudent>true</Prudent>
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<!--配置生成日志的文件路径 -->
+			<FileNamePattern>${log-dir}/%d{yyyy-MM-dd}/${log-name}-debug.log</FileNamePattern>
+			<maxHistory>60</maxHistory>
+		</rollingPolicy>
+		<layout class="ch.qos.logback.classic.PatternLayout">
+			<Pattern>%d{HH:mm:ss} -%msg%n</Pattern>
+		</layout>
+		<encoder>
+			<pattern>%d{HH:mm:ss.SSS} %-5level %logger{16} : %line | %msg%n</pattern>
+			<charset class="java.nio.charset.Charset">UTF-8</charset>
+		</encoder>
+		<append>true</append>
+		<filter class="ch.qos.logback.classic.filter.LevelFilter">
+			<level>DEBUG</level>
+			<onMatch>ACCEPT</onMatch>
+			<onMismatch>DENY</onMismatch>
+		</filter>
+	</appender>
+
+
+	<appender name="errorAppender" class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<Prudent>true</Prudent>
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<!--配置生成日志的文件路径 -->
+			<FileNamePattern>${log-dir}/%d{yyyy-MM-dd}/${log-name}-error.log</FileNamePattern>
+			<maxHistory>60</maxHistory>
+		</rollingPolicy>
+		<layout class="ch.qos.logback.classic.PatternLayout">
+			<Pattern>%d{HH:mm:ss} -%msg%n</Pattern>
+		</layout>
+		<encoder>
+			<pattern>%d{HH:mm:ss.SSS} %-5level %logger{16} : %line | %msg%n</pattern>
+			<charset class="java.nio.charset.Charset">UTF-8</charset>
+		</encoder>
+		<append>true</append>
+		<filter class="ch.qos.logback.classic.filter.LevelFilter">
+			<level>ERROR</level>
+			<onMatch>ACCEPT</onMatch>
+			<onMismatch>DENY</onMismatch>
+		</filter>
+	</appender>
+
+	<logger name="com.shadow.photo.dao" level="debug" additivity="true">
+		<appender-ref ref="debugAppender" />
+	</logger>
+	<logger name="com.shadow.photo.service" level="info" additivity="true">
+		<appender-ref ref="infoAppender" />
+	</logger>
+	<logger name="com.shadow.photo.controller" level="info" additivity="true">
+		<appender-ref ref="infoAppender" />
+	</logger>
+	<logger name="com.shadow.common" level="info" additivity="true">
+		<appender-ref ref="infoAppender" />
+	</logger>
+
+	<logger name="com.shadow" level="error" additivity="true">
+		<appender-ref ref="errorAppender" />
+	</logger>
+
+	<root level="INFO">
+		<appender-ref ref="consoleAppender" />
+	</root>
+</configuration>
