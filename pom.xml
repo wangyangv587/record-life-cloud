@@ -36,6 +36,7 @@
         <alibaba.druid.version>1.1.18</alibaba.druid.version>
         <hutool.version>5.4.3</hutool.version>
         <shiro.spring.version>1.4.0</shiro.spring.version>
+        <dynamic.datasource.boot.version>2.5.6</dynamic.datasource.boot.version>
     </properties>
 
     <name>record-life-cloud</name>

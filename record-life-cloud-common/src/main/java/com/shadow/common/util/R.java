@@ -29,7 +29,7 @@ public class R extends HashMap<String,Object> {
         return r;
     }
 
-    public R error(){
+    public static R error(){
         R r = new R();
         r.put("code",500);
         r.put("msg","error");

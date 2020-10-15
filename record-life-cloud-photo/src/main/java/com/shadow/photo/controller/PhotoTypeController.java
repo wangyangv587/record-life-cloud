@@ -1,7 +1,7 @@
 package com.shadow.photo.controller;
 
 import cn.hutool.json.JSONObject;
-import com.shadow.common.annotation.DS;
+import com.baomidou.dynamic.datasource.annotation.DS;
 import com.shadow.common.annotation.ShadowLog;
 import com.shadow.common.entity.photo.PhotoTypeEntity;
 import com.shadow.common.util.R;
@@ -41,7 +41,7 @@ public class PhotoTypeController {
      * @param jsonObject
      * @return
      */
-    @DS
+    @DS("master")
     @ShadowLog
     @PostMapping("list")
     public R listPage(@RequestBody JSONObject jsonObject){
@@ -54,6 +54,7 @@ public class PhotoTypeController {
      * @param entity
      * @return
      */
+    @DS("second")
     @ShadowLog
     @PostMapping("del")
     public R del(@RequestBody PhotoTypeEntity entity){

@@ -14,11 +14,6 @@
     <dependencies>
         <dependency>
             <groupId>com.shadow</groupId>
-            <artifactId>record-life-cloud-web</artifactId>
-            <version>${project.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>com.shadow</groupId>
             <artifactId>record-life-cloud-common</artifactId>
             <version>${project.version}</version>
         </dependency>
