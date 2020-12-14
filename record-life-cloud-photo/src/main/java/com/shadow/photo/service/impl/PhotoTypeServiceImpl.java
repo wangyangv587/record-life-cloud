@@ -13,4 +13,8 @@ import org.springframework.stereotype.Service;
  */
 @Service
 public class PhotoTypeServiceImpl extends ServiceImpl<PhotoTypeDao, PhotoTypeEntity> implements PhotoTypeService {
+    @Override
+    public void print() {
+
+    }
 }

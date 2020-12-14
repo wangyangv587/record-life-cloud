@@ -10,4 +10,9 @@ import com.shadow.common.entity.photo.PhotoTypeEntity;
  */
 public interface PhotoTypeService extends IService<PhotoTypeEntity> {
 
+     void print();
+
+    default void print1(){
+        print();
+    }
 }
